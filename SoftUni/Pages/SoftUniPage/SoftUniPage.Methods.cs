@@ -1,5 +1,7 @@
 ﻿using GoogleSearch.Page;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using System;
 
 namespace SoftUni.Pages.SoftUniPage
 {
@@ -12,5 +14,13 @@ namespace SoftUni.Pages.SoftUniPage
 
         public override string Url => "https://softuni.bg/";
 
+
+        public void PerformNavigationActions()
+        {
+            Courses.Click();
+            ActiveModulsSection.Click();
+            QaCourseLink.Click();
+            CoursesInTheModule.Click();
+        }      
     }
 }

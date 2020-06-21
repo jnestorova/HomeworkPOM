@@ -19,23 +19,18 @@ namespace SoftUni.Tests.QAAutomation
         [TearDown]
         public void TearDown()
         {
-            Driver.Quit();
+            //Driver.Quit();
         }
 
         [Test]
         public void QAAutomationCourse()
         {
             //Act
-            _softUniPage.Courses.Click();
-            _softUniPage.ActiveModulsSection.Click();
-            _softUniPage.QaCourseLink.Click();
-            _softUniPage.CoursesInTheModule.Click();
-
+            _softUniPage.PerformNavigationActions();
 
             //Assert
-            var actualHeader = _softUniPage.Header.Text;
-
-            Assert.AreEqual("QA Automation - май 2020", actualHeader);
+            _softUniPage.ValidateHeaderText("QA Automation - май 2020");
+            //_softUniPage.ValidateHeaderText("QA Automation - май 2020");
         }
     }
 }
